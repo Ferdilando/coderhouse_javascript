@@ -28,7 +28,6 @@ function cargar(){
         }
         
         alert("Se ingresaron los datos del empleado "+i+ ":"+" \n Nombre: "+nombre+" \n Apellido: "+apellido+" \n DNI: "+dni)}
-
     }
     
       
