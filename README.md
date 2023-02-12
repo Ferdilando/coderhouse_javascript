@@ -3,7 +3,7 @@
 1- Introducción
 
 Este sistema es un gestor de recursos humanos para empresas. El objetivo principal es poder llevar 
-un control de la nómina de empleados, coimo altas, bajas, licencias y la liquidación de sueldos.
+un control de la nómina de empleados, como altas, bajas, licencias y la liquidación de sueldos.
 
 2- Tecnologías
 
