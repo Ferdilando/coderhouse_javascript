@@ -1,4 +1,4 @@
-// Array vacia la cual luego se ira completando con los nuevos empleados que creemos
+// Array vacia la cual luego se ira completando con los nuevos empleados que creemos.
 var empleados = [];
 
 // clase persona, que tomara los datos de los nuevos empleados
@@ -10,7 +10,6 @@ class persona {
         this.vHora = parseFloat(vHora);
         this.cHoras = parseFloat(cHoras);
     }
-
 };
 
 // funcion que permite cargar datos de los empleados y los agrega al array 'empleados'
