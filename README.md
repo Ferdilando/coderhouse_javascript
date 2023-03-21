@@ -14,4 +14,4 @@ Para este sistema, se utilizó:
 
 3- Funcionamiento
 
-En un primer momento se carga la cantidad de empleados que se quiera ingresar, luego se ingresan los datos de los empleados. Una vez creados los empleados, se puede ingresar la cantidad de horas trabajdas y el valor hora de cada uno. Cuando esto este todo hecho, se puede solicitar la liquidacion para ver el sueldo a liquidar.
+Se puede ver los empleados en nómina (a fines de este trabajo, se trae 10 usuarios aleatorios de Random User, de tal forma que funcionen como base de datos), cargar nuevos empleados, cargar la cantidad de horas trabajas y el valor de la hora trabajada para cada empleado, así como también liquidarles el sueldo y mostrarlo en pantalla.
