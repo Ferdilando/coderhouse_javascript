@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Trabajo Final - Vega - CoderHouse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js"></script>
+    <header class="banner">
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="empleados.html">NOMINA</a></li>
+                <li><a href="carga.html">CARGAR EMPLEADO</a></li>
+                <li><a href="liquidacion.html">LIQUIDAR SUELDOS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2>Carga de valor y cantidad de horas del empleado</h2><br/>
+    <h3>Ingrese el DNI de la persona a la que quiere cargar el valor de la hora y la cantidad de horas trabajadas</h3><br/><br/>
+
+    <!--Boton para cargar el valor hora y cantidad de horas trabajadas del empleado -->
+    <label for="carga">DNI del empleado</label>
+    <input type="text" id="valorHora" placeholder="">
+    <button type="button" onclick="valorHora()">Cargar valor de la hora</button>
+    <button id="cantidadHoras" type="button" onclick="cantidadHoras()">Cargar cantidad de horas</button>
+
+    <!--Boton para liquidar sueldo -->
+    <h2>Liquidador de sueldo</h2>
+    <label for="carga">Ingrese DNI del empleado a liquidar sueldo</label>
+    <input type="text" id="liquidarSueldo" placeholder="">
+    <button type="button" onclick="liquidarSueldo()">Calcular</button>
+
+    <!--Boton para ver liquidacion -->
+    <button id="verLiquidacion" type="button" onclick="verLiquidacion()">Ver liquidación</button><br /><br />
+
+    <table name="tablaliquidacion" border="1">
+        <tr>
+            <th>DNI</th>
+            <th>Sueldo Bruto</th>
+            <th>Descuentos</th>
+            <th>Sueldo Neto</th>
+        </tr>
+    </table>
+
+</body>
+</html>

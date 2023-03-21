@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Trabajo Final - Vega - CoderHouse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js"></script>
+    <header class="banner">
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="empleados.html">NOMINA</a></li>
+                <li><a href="carga.html">CARGAR EMPLEADO</a></li>
+                <li><a href="liquidacion.html">LIQUIDAR SUELDOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Alta de empleados en sistema</h2><br/>
+    <h3>Complete los datos y haga click en "agregar empleado" para sumarlo a la nómina</h3><br/><br/><br/>
+
+    Nombre: <input type="text" id="fname" /><br /><br />
+    Apelllido: <input type="text" id="lname" /><br /><br />
+    DNI: <input type="number" id="dni" /><br /><br />
+    <button onclick="addEmployee()">Agregar empleado</button><br /><br />
+
+    <table name="tablapersona" border="1">
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+        </tr>
+    </table>
+
+</body>
+</html>

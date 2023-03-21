@@ -5,49 +5,24 @@
     <link rel="stylesheet" href="style.css">
   </head>
 
-  <body><script src="main.js"></script>
-    <h2>Alta de empleados en sistema</h2><br/>
-    <!--Boton para elegir la cantidad de empleados que se van a cargar. -->
-<!--     <label for="carga">Cuántos empleados quiere ingresar?</label>
-    <input type="number" id="carga" placeholder="">
-    <button type="button"  onclick="cargar()">Cargar</button> -->
-
-    Nombre: <input type="text" id="fname"/><br/><br/>
-    Apelllido: <input type="text" id="lname"/><br/><br/>
-    DNI: <input type="number" id="dni"/><br/><br/>
-    <button onclick="addEmployee()">Agregar empleado</button><br/><br/>
-
-    <table name="tablapersona" border="1">
-      <tr>
-        <th>Nombre</th>
-        <th>Apellido</th>
-        <th>DNI</th>
-      </tr>
-    </table>
-
-    <h2>Carga de valor hora del empleado</h2>
-    <!--Boton para cargar el valor hora y cantidad de horas trabajadas del empleado -->
-    <label for="carga">Ingrese DNI del empleado</label>
-    <input id="valorHora" placeholder="">
-    <button type="button"  onclick="valorHora()">Cargar valor de la hora</button>
-    <button  id="cantidadHoras"type="button"  onclick="cantidadHoras()">Cargar cantidad de horas</button>
-
-    <!--Boton para liquidar sueldo -->
-    <h2>Liquidador de sueldo</h2>
-    <label for="carga">Ingrese DNI del empleado a liquidar sueldo</label>
-    <input  id="liquidarSueldo" placeholder="">
-    <button type="button"  onclick="liquidarSueldo()">Calcular</button>
-
-    <!--Boton para ver liquidacion -->
-    <button id="verLiquidacion" type="button"  onclick="verLiquidacion()">Ver liquidación</button><br/><br/>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js"></script>
     
-    <table name="tablaliquidacion" border="1">
-      <tr>
-        <th>DNI</th>
-        <th>Sueldo Bruto</th>
-        <th>Descuentos</th>
-        <th>Sueldo Neto</th>
-      </tr>
-    </table>
+    <header  class="banner">
+      <nav>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="empleados.html">NOMINA</a></li>
+          <li><a href="carga.html">CARGAR EMPLEADO</a></li>
+          <li><a href="liquidacion.html">LIQUIDAR SUELDOS</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <div class="container">
+      <p>BIENVENID@ A MI LIQUIDADOR DE SUELDOS<br><br>Puede utilizar la barra de navegación <br> para ver la nómina actual de empleados, <br>dar de alta nuevos empleados, o liquidar sueldos.</p>
+    </div>
+    
   </body>
 </html>
