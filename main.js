@@ -90,7 +90,7 @@ function valorHora() {
 // Funcion para agregar cantidad de horas trabajadas de algun empleado
 function cantidadHoras() {
     var dni = document.getElementById("valorHora").value;
-    
+
     // se traen los datos del empleado almacenados en el localstorage
     var empleados = JSON.parse(localStorage.getItem("empleados"));
     if (!empleados) {
@@ -134,25 +134,81 @@ function liquidarSueldo() {
 
     // se busca dentro del array al objeto que coincide con el valor ingresado
     var empleados = JSON.parse(localStorage.getItem("empleados"));
+
+    if (!empleados) {
+        // SweetAlert en caso de que el localStorage esté vacío
+        Swal.fire({
+            icon: 'error',
+            title: 'No se han encontrado empleados en el sistema!',
+            showConfirmButton: false,
+            timer: 1500
+        })
+        return;
+    }
+
     var persona = empleados.find(item => item.dni === dni);
 
-    // se calculan los items dentro del bono de sueldo
-    var sueldoBruto = persona.vHora * persona.cHoras
-    var calcularDescuentos = (persona.vHora * persona.cHoras) * 0.17
-    var descuentos = calcularDescuentos.toFixed(2)
-    var calcularSueldoNeto = (persona.vHora * persona.cHoras) * 0.83
-    var sueldoNeto = calcularSueldoNeto.toFixed(2)
+    if (persona) {
+        // se calculan los items dentro del bono de sueldo
+        var sueldoBruto = 0;
+        var descuentos = 0;
+        var sueldoNeto = 0;
 
-    // se guardan los valores
-    const liquidacion = { dni, sueldoBruto, descuentos, sueldoNeto }
-    const enJson = JSON.stringify(liquidacion)
+        if (persona.vHora && persona.cHoras) {
+            sueldoBruto = persona.vHora * persona.cHoras;
+            var calcularDescuentos = sueldoBruto * 0.17
+            descuentos = calcularDescuentos.toFixed(2)
+            var calcularSueldoNeto = sueldoBruto * 0.83
+            sueldoNeto = calcularSueldoNeto.toFixed(2)
+        } else {
+            // SweetAlert en caso de que vHora o cHoras sean null
+            Swal.fire({
+                icon: 'error',
+                title: 'Faltan cargar los datos del valor hora o cantidad de horas trabajadas!',
+                showConfirmButton: false,
+                timer: 3000
+            })
+            return;
+        }
 
-    localStorage.setItem("liquidacion", enJson)
+        // se guardan los valores
+        const liquidacion = { dni, sueldoBruto, descuentos, sueldoNeto }
+        const enJson = JSON.stringify(liquidacion)
+
+        localStorage.setItem("liquidacion", enJson)
+
+        // SweetAlert en caso de que se ejecute correctamente
+        Swal.fire({
+            icon: 'success',
+            title: 'La liquidación se realizó con éxito!',
+            showConfirmButton: false,
+            timer: 3000
+        })
+    } else {
+        // SweetAlert en caso de que no se encuentre el dni ingresado
+        Swal.fire({
+            icon: 'error',
+            title: 'No existe un empleado con ese dni!',
+            showConfirmButton: false,
+            timer: 1500
+        })
+    }
 }
 
 // funcion para imprimir la liquidacion en pantalla
 function verLiquidacion() {
     var employee = JSON.parse(localStorage.getItem('liquidacion'))
+
+    if (!employee) {
+        // SweetAlert en caso de que no haya datos en el localStorage
+        Swal.fire({
+            icon: 'error',
+            title: 'No hay liquidaciones registradas en el sistema!',
+            showConfirmButton: false,
+            timer: 3000
+        })
+        return;
+    }
 
     // se traen los elementos guardados
     var dni = employee.dni
